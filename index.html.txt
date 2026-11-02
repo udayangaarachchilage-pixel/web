@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AKZZ TOOLS — Where Technology Meets Creativity. Premium futuristic technology solutions: web development, software, bots, design and more." />
+  <meta name="keywords" content="AKZZ TOOLS, technology, web development, software, futuristic" />
+  <meta name="author" content="AKZZ TOOLS" />
+  <title>AKZZ TOOLS — Innovating The Digital Future</title>
+
+  <!-- Smooth, high-quality typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ================= LOADING SCREEN ================= -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-core">
+      <div class="loader-ring"><span></span><span></span><span></span><span></span></div>
+      <div class="preloader-logo">AKZZ<span>TOOLS</span></div>
+      <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
+      <div class="loader-percent" id="loaderPercent">0%</div>
+      <div class="loader-particles" id="loaderParticles"></div>
+    </div>
+  </div>
+
+  <!-- ================= CUSTOM CURSOR ================= -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ================= BACKGROUND FX ================= -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow glow-1" aria-hidden="true"></div>
+  <div class="bg-glow glow-2" aria-hidden="true"></div>
+  <canvas id="particlesCanvas" aria-hidden="true"></canvas>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar" id="navbar">
+    <nav class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-icon"><i class="fa-solid fa-bolt"></i></span>
+        <span class="logo-text">AKZZ<em>TOOLS</em></span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#products" class="nav-link">Products</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li class="nav-cta-item"><a href="#contact" class="btn btn-neon btn-sm magnetic">GET STARTED</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="home">
+    <div class="mouse-glow" id="mouseGlow"></div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge reveal">
+          <i class="fa-solid fa-microchip"></i> NEXT-GEN TECHNOLOGY STUDIO
+        </div>
+        <h1 class="hero-title">
+          <span class="reveal-line"><span>INNOVATING</span></span>
+          <span class="reveal-line"><span>THE <span class="gradient-text">DIGITAL</span></span></span>
+          <span class="reveal-line"><span class="gradient-text">FUTURE</span></span>
+          <span class="reveal-line" style="font-size: 0.6em; margin-top: 10px;"><span>BY <span class="gradient-text">AKZZ TOOLS</span></span></span>
+        </h1>
+        <p class="hero-subtitle reveal">
+          Welcome to AKZZ TOOLS – Where Technology Meets Creativity.
+        </p>
+        <div class="hero-typing">
+          <span class="type-prefix">&gt;_</span>
+          <span id="typingText"></span><span class="caret"></span>
+        </div>
+        <div class="hero-buttons reveal">
+          <a href="#services" class="btn btn-neon magnetic"><span>EXPLORE SERVICES</span><i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#contact" class="btn btn-ghost magnetic"><span>CONTACT US</span><i class="fa-solid fa-paper-plane"></i></a>
+        </div>
+        <div class="hero-socials reveal">
+          <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="object3d" id="object3d">
+          <div class="cube-wrap">
+            <div class="cube">
+              <div class="cube-face front"><i class="fa-solid fa-code"></i></div>
+              <div class="cube-face back"><i class="fa-solid fa-brain"></i></div>
+              <div class="cube-face right"><i class="fa-solid fa-robot"></i></div>
+              <div class="cube-face left"><i class="fa-solid fa-shield-halved"></i></div>
+              <div class="cube-face top"><i class="fa-solid fa-microchip"></i></div>
+              <div class="cube-face bottom"><i class="fa-solid fa-network-wired"></i></div>
+            </div>
+          </div>
+          <div class="orbit orbit-1"><span></span></div>
+          <div class="orbit orbit-2"><span></span></div>
+          <div class="orbit orbit-3"><span></span></div>
+          <div class="core-glow"></div>
+        </div>
+        <div class="float-icon fi-1"><i class="fa-brands fa-html5"></i></div>
+        <div class="float-icon fi-2"><i class="fa-brands fa-js"></i></div>
+        <div class="float-icon fi-3"><i class="fa-brands fa-react"></i></div>
+        <div class="float-icon fi-4"><i class="fa-brands fa-node"></i></div>
+        <div class="float-icon fi-5"><i class="fa-brands fa-python"></i></div>
+      </div>
+    </div>
+    <a href="#about" class="scroll-down" aria-label="Scroll down">
+      <div class="mouse"><div class="wheel"></div></div>
+      <span>SCROLL</span>
+    </a>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="section about" id="about">
+    <div class="section-header reveal">
+      <span class="section-tag">// ABOUT US</span>
+      <h2 class="section-title">ABOUT <span class="gradient-text">AKZZ TOOLS</span></h2>
+      <div class="title-line"><span></span></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p class="about-lead">AKZZ TOOLS is a modern technology brand focused on digital innovation, creative development, and next-generation technology solutions.</p>
+        <p>We blend engineering precision with artistic vision to build products that don't just work — they inspire. From immersive web experiences to intelligent automation systems, every line of code we write is crafted with passion and purpose.</p>
+        <div class="about-cards">
+          <div class="info-card tilt reveal">
+            <i class="fa-solid fa-lightbulb"></i>
+            <h4>Innovation First</h4>
+            <p>Cutting-edge solutions built with tomorrow's technology, today.</p>
+          </div>
+          <div class="info-card tilt reveal">
+            <i class="fa-solid fa-gem"></i>
+            <h4>Premium Quality</h4>
+            <p>Pixel-perfect craftsmanship in every product we deliver.</p>
+          </div>
+          <div class="info-card tilt reveal">
+            <i class="fa-solid fa-rocket"></i>
+            <h4>Rapid Delivery</h4>
+            <p>Agile workflows that turn ideas into reality at light speed.</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card reveal"><span class="counter" data-target="150">0</span><span class="stat-plus">+</span><p>Projects Completed</p></div>
+        <div class="stat-card reveal"><span class="counter" data-target="120">0</span><span class="stat-plus">+</span><p>Happy Clients</p></div>
+        <div class="stat-card reveal"><span class="counter" data-target="98">0</span><span class="stat-plus">%</span><p>Satisfaction Rate</p></div>
+        <div class="stat-card reveal"><span class="counter" data-target="5">0</span><span class="stat-plus">+</span><p>Years Experience</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICES ================= -->
+  <section class="section services" id="services">
+    <div class="section-header reveal">
+      <span class="section-tag">// WHAT WE DO</span>
+      <h2 class="section-title">OUR <span class="gradient-text">SERVICES</span></h2>
+      <div class="title-line"><span></span></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card tilt reveal">
+        <div class="service-icon"><i class="fa-brands fa-whatsapp"></i></div>
+        <h3>WhatsApp Bug Bot</h3>
+        <p>Powerful and reliable WhatsApp automation and bug bots for your daily needs.</p>
+        <a href="https://wa.link/kbo57i" target="_blank" class="learn-more">Buy Bot <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card tilt reveal">
+        <div class="service-icon"><i class="fa-solid fa-camera"></i></div>
+        <h3>Cam Hack</h3>
+        <p>Advanced camera access and security testing tools for ethical hacking.</p>
+        <a href="https://wa.link/kbo57i" target="_blank" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card tilt reveal">
+        <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <h3>Social Boosting</h3>
+        <p>Boost your social media presence with our fast and reliable services.</p>
+        <a href="https://wa.link/kbo57i" target="_blank" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card tilt reveal">
+        <div class="service-icon"><i class="fa-solid fa-wifi"></i></div>
+        <h3>Wifi Hacking Adapter</h3>
+        <p>High-quality external Wi-Fi adapters for penetration testing and ethical hacking.</p>
+        <a href="https://wa.link/kbo57i" target="_blank" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card tilt reveal">
+        <div class="service-icon"><i class="fa-solid fa-pen-nib"></i></div>
+        <h3>Logo Design</h3>
+        <p>Professional and unique logo designs to build your brand identity.</p>
+        <a href="https://wa.link/kbo57i" target="_blank" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card tilt reveal">
+        <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3>VPN Service</h3>
+        <p>Secure and high-speed VPN services to protect your online privacy.</p>
+        <a href="https://wa.link/kbo57i" target="_blank" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PRODUCTS ================= -->
+  <section class="section products" id="products">
+    <div class="section-header reveal">
+      <span class="section-tag">// MARKETPLACE</span>
+      <h2 class="section-title">FEATURED <span class="gradient-text">PRODUCTS</span></h2>
+      <div class="title-line"><span></span></div>
+    </div>
+    <div class="products-grid">
+      <div class="product-card tilt reveal">
+        <div class="product-img"><i class="fa-brands fa-whatsapp"></i><span class="product-badge">BEST SELLER</span></div>
+        <h3>WhatsApp Bug Bot</h3>
+        <p>Powerful WhatsApp automation and bug bot for your daily needs.</p>
+        <div class="product-footer">
+          <span class="price">$10</span>
+          <a href="https://wa.link/kbo57i" target="_blank" class="btn btn-neon btn-sm">View Details</a>
+        </div>
+      </div>
+      <div class="product-card tilt reveal">
+        <div class="product-img"><i class="fa-solid fa-chart-simple"></i><span class="product-badge">NEW</span></div>
+        <h3>Social Boosting</h3>
+        <p>Boost your social media presence with our fast and reliable services.</p>
+        <div class="product-footer">
+          <span class="price">$5</span>
+          <a href="https://wa.link/kbo57i" target="_blank" class="btn btn-neon btn-sm">View Details</a>
+        </div>
+      </div>
+      <div class="product-card tilt reveal">
+        <div class="product-img"><i class="fa-solid fa-wifi"></i></div>
+        <h3>Wifi Hacking Adapter</h3>
+        <p>High-quality external Wi-Fi adapters for penetration testing.</p>
+        <div class="product-footer">
+          <span class="price">$15</span>
+          <a href="https://wa.link/kbo57i" target="_blank" class="btn btn-neon btn-sm">View Details</a>
+        </div>
+      </div>
+      <div class="product-card tilt reveal">
+        <div class="product-img"><i class="fa-solid fa-camera-retro"></i></div>
+        <h3>Cam Hack All Phones</h3>
+        <p>Advanced camera access and security testing tools.</p>
+        <div class="product-footer">
+          <span class="price">$5</span>
+          <a href="https://wa.link/kbo57i" target="_blank" class="btn btn-neon btn-sm">View Details</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section class="section projects" id="projects">
+    <div class="section-header reveal">
+      <span class="section-tag">// PORTFOLIO</span>
+      <h2 class="section-title">OUR <span class="gradient-text">PROJECTS</span></h2>
+      <div class="title-line"><span></span></div>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <div class="project-screenshot grad-1">
+          <i class="fa-solid fa-chart-line"></i>
+          <div class="project-overlay">
+            <a href="#" class="btn btn-neon btn-sm"><i class="fa-solid fa-eye"></i> Live Demo</a>
+            <a href="#" class="btn btn-ghost btn-sm"><i class="fa-brands fa-github"></i> Source Code</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <h3>Nexus Analytics</h3>
+          <div class="tech-tags"><span>React</span><span>Node.js</span><span>MongoDB</span></div>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-screenshot grad-2">
+          <i class="fa-solid fa-gamepad"></i>
+          <div class="project-overlay">
+            <a href="#" class="btn btn-neon btn-sm"><i class="fa-solid fa-eye"></i> Live Demo</a>
+            <a href="#" class="btn btn-ghost btn-sm"><i class="fa-brands fa-github"></i> Source Code</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <h3>Quantum Arcade</h3>
+          <div class="tech-tags"><span>JavaScript</span><span>Canvas</span><span>WebGL</span></div>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-screenshot grad-3">
+          <i class="fa-solid fa-comments"></i>
+          <div class="project-overlay">
+            <a href="#" class="btn btn-neon btn-sm"><i class="fa-solid fa-eye"></i> Live Demo</a>
+            <a href="#" class="btn btn-ghost btn-sm"><i class="fa-brands fa-github"></i> Source Code</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <h3>PulseChat AI</h3>
+          <div class="tech-tags"><span>Python</span><span>FastAPI</span><span>WebSocket</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TECHNOLOGIES ================= -->
+  <section class="section tech" id="tech">
+    <div class="section-header reveal">
+      <span class="section-tag">// OUR ARSENAL</span>
+      <h2 class="section-title">POWERED BY <span class="gradient-text">TECHNOLOGY</span></h2>
+      <div class="title-line"><span></span></div>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-logo reveal" style="--d:0s"><i class="fa-brands fa-html5" style="color:#ff6d3a"></i><span>HTML5</span></div>
+      <div class="tech-logo reveal" style="--d:.1s"><i class="fa-brands fa-css3-alt" style="color:#4aa8ff"></i><span>CSS3</span></div>
+      <div class="tech-logo reveal" style="--d:.2s"><i class="fa-brands fa-js" style="color:#ffe14a"></i><span>JavaScript</span></div>
+      <div class="tech-logo reveal" style="--d:.3s"><i class="fa-brands fa-node" style="color:#5ee06a"></i><span>Node.js</span></div>
+      <div class="tech-logo reveal" style="--d:.4s"><i class="fa-brands fa-python" style="color:#6fa8ff"></i><span>Python</span></div>
+      <div class="tech-logo reveal" style="--d:.5s"><i class="fa-brands fa-react" style="color:#4adfff"></i><span>React</span></div>
+      <div class="tech-logo reveal" style="--d:.6s"><i class="fa-brands fa-github" style="color:#ffffff"></i><span>GitHub</span></div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="section contact" id="contact">
+    <div class="section-header reveal">
+      <span class="section-tag">// GET IN TOUCH</span>
+      <h2 class="section-title">CONTACT <span class="gradient-text">US</span></h2>
+      <div class="title-line"><span></span></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>Let's Build The Future Together</h3>
+        <p>Have a project in mind? Drop a message and our team will respond within 24 hours.</p>
+        <div class="contact-item"><i class="fa-solid fa-envelope"></i><div><h5>Email</h5><span>udayangaarachchilage@gmail.com</span></div></div>
+        <div class="contact-item"><i class="fa-solid fa-location-dot"></i><div><h5>Location</h5><span>Rathnapura / Kalawana</span></div></div>
+        <div class="contact-socials">
+          <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <a href="https://wa.link/kbo57i" class="btn btn-whatsapp magnetic" target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+        </a>
+      </div>
+      <form class="contact-form reveal" id="contactForm" novalidate>
+        <div class="form-group">
+          <input type="text" id="name" name="name" placeholder=" " required minlength="2" />
+          <label for="name"><i class="fa-solid fa-user"></i> Your Name</label>
+          <span class="error-msg"></span>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" name="email" placeholder=" " required />
+          <label for="email"><i class="fa-solid fa-envelope"></i> Your Email</label>
+          <span class="error-msg"></span>
+        </div>
+        <div class="form-group">
+          <input type="text" id="subject" name="subject" placeholder=" " required minlength="3" />
+          <label for="subject"><i class="fa-solid fa-tag"></i> Subject</label>
+          <span class="error-msg"></span>
+        </div>
+        <div class="form-group">
+          <textarea id="message" name="message" rows="5" placeholder=" " required minlength="10"></textarea>
+          <label for="message"><i class="fa-solid fa-message"></i> Your Message</label>
+          <span class="error-msg"></span>
+        </div>
+        <button type="submit" class="btn btn-neon btn-full magnetic" id="submitBtn">
+          <span>SEND MESSAGE</span><i class="fa-solid fa-paper-plane"></i>
+        </button>
+        <div class="form-success" id="formSuccess"><i class="fa-solid fa-circle-check"></i> Message sent successfully! We'll reply within 24 hours.</div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="neon-divider"><span></span><i class="fa-solid fa-bolt"></i><span></span></div>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="nav-logo"><span class="logo-icon"><i class="fa-solid fa-bolt"></i></span><span class="logo-text">AKZZ<em>TOOLS</em></span></a>
+        <p>A premium technology studio crafting the digital future with creativity, code and innovation.</p>
+        <div class="contact-socials">
+          <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#products">Products</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-links">
+        <h4>Services</h4>
+        <a href="#services">WhatsApp Bug Bot</a>
+        <a href="#services">Cam Hack</a>
+        <a href="#services">Social Boosting</a>
+        <a href="#services">Wifi Hacking Adapter</a>
+        <a href="#services">Logo Design</a>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <a href="mailto:udayangaarachchilage@gmail.com">udayangaarachchilage@gmail.com</a>
+        <a href="https://wa.link/kbo57i">WhatsApp</a>
+        <a href="#contact">Send a Message</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright © 2026 AKZZ TOOLS. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></a>
+
+  <script src="script.js"></script>
+</body>
+</html>
